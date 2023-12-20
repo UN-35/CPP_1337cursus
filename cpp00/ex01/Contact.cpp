@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:05:34 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/20 18:24:43 by uns-35           ###   ########.fr       */
+/*   Updated: 2023/12/20 22:39:26 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,24 @@ void Contact::AddInfo(std::string Info[5]) {
 }
 void    PrintTen(std::string str)
 {
-    int i = -1;
     if (str.length() <= 10)
-        std::cout << std::setw(10) << str;
+        std::cout << str;
     else
     {
+        int i = -1;
         while (str[++i] && i < 9)
-            std::cout << std::setw(10) << str[i];
+            std::cout << str[i];
         std::cout << ".";
     }
 }
 
 void    Contact::PrintIndex()
 {
-    std::cout << FirstName << std::endl;
-    std::cout << LastName << std::endl;
-    std::cout << NickName << std::endl;
-    std::cout << PhoneNumber << std::endl;
-    std::cout << DarkestSecret << std::endl;
+    std::cout << "\nFirstName: " << FirstName << std::endl;
+    std::cout << "LastName: " << LastName << std::endl;
+    std::cout << "NickName: " << NickName << std::endl;
+    std::cout << "PhoneNumber: " << PhoneNumber << std::endl;
+    std::cout << "DarkestSecret: " << DarkestSecret << std::endl << std::endl;
 }
 
 void    Contact::printer(int i)
@@ -51,7 +51,7 @@ void    Contact::printer(int i)
     PrintTen(LastName);
     std::cout << "|";
     PrintTen(NickName);
-    std::cout << std::endl;
+    std::cout << "\n\nWhich one on the list you want to know more about?\n==> ";
 }
 
 Contact::Contact()

@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:16:24 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/20 17:28:57 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:50:19 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void PrintUpper( std::string str )
         else
             std::cout << str[i];
     }
-    
 }
 
 int main( int ac, char **av ) {
