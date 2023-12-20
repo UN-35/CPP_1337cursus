@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:05:34 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/20 14:15:45 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:24:43 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ void    PrintTen(std::string str)
             std::cout << std::setw(10) << str[i];
         std::cout << ".";
     }
+}
+
+void    Contact::PrintIndex()
+{
+    std::cout << FirstName << std::endl;
+    std::cout << LastName << std::endl;
+    std::cout << NickName << std::endl;
+    std::cout << PhoneNumber << std::endl;
+    std::cout << DarkestSecret << std::endl;
 }
 
 void    Contact::printer(int i)

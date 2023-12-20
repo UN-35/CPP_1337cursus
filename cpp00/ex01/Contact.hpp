@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:05:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/20 14:05:15 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:10:50 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 
 #include <iostream>
-
 
 class Contact
 {
@@ -28,10 +27,11 @@ private:
 public:
     void AddInfo(std::string Info[5]);
     void printer(int i);
-
+    void PrintIndex();
     Contact();
     ~Contact();
 };
+
 
 
 #endif
