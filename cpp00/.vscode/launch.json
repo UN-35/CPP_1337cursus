@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/yoelansa/Desktop/CPP_1337cursus/cpp00/ex00",
-      "program": "/Users/yoelansa/Desktop/CPP_1337cursus/cpp00/ex00/build/Debug/outDebug"
+      "cwd": "/Users/yoelansa/Desktop/CPP_1337cursus/cpp00/ex01",
+      "program": "/Users/yoelansa/Desktop/CPP_1337cursus/cpp00/ex01/build/Debug/outDebug"
     }
   ]
 }

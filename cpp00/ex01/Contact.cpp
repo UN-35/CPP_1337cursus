@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:05:34 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/20 22:39:26 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/12/21 10:59:25 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    Contact::printer(int i)
     PrintTen(LastName);
     std::cout << "|";
     PrintTen(NickName);
-    std::cout << "\n\nWhich one on the list you want to know more about?\n==> ";
+    std::cout << std::endl;
 }
 
 Contact::Contact()
