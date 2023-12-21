@@ -6,7 +6,7 @@
 #    By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/20 12:01:24 by yoelansa          #+#    #+#              #
-#    Updated: 2023/12/20 22:08:31 by yoelansa         ###   ########.fr        #
+#    Updated: 2023/12/21 15:48:33 by yoelansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -rf
 
 CC = c++
 
-FLAGS = -Wextra -Werror -Wall -fsanitize=address #-std=c++98
+FLAGS = -Wextra -Werror -Wall -fsanitize=address -std=c++98
 
 all : $(NAME)
 

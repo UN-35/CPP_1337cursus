@@ -3,7 +3,11 @@
     "*.tcc": "cpp",
     "istream": "cpp",
     "iostream": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "__locale": "cpp",
+    "__string": "cpp",
+    "string": "cpp",
+    "string_view": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

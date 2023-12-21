@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:06:27 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/21 14:42:39 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:44:37 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@ int    PhoneNumPars(std::string nbr) {
             std::cout << "ERROR : Invalide Phone number\n";
             return 1;
         }
+    }
+    return 0;
+}
+
+int    NonPrintableChars(std::string str) {
+    int i = 0;
+    while ( str[i] ) {
+        if ( !isprint(str[i]) )
+            return 1;
+        i++;
     }
     return 0;
 }
@@ -38,6 +48,10 @@ void    PhoneBook::add() {
         else if (i == 4)
             std::cout << "Enter the DarckestSecret:\n$ add> ";
         std::getline( std::cin, Info[i] );
+        if ( Info[i].empty() || NonPrintableChars(Info[i]) ) {
+            std::cout << "Try with valid charachters\n";
+            return ;
+        }
         if ( i == 3 ) {
             if (PhoneNumPars(Info[i])) {
                 std::cout << "ADD Exit..\n";
@@ -64,6 +78,8 @@ void    PhoneBook::search()
     }
     i = -1;
     while ( ++i < nb ) {
+        if ( i > 7 )
+            break;
         contacts[i].printer(i);
     }
     std::cout << "\nWhich one on the list you want to know more about?\n$> Search> ";
@@ -72,17 +88,19 @@ void    PhoneBook::search()
         std::cout << "PhoneBook Exit..\n";
         std::exit(1) ;
     }
-    if ( str.length() > 2) {
-        std::cout << "\nERROR : Undefined Contact\n";
-        return ;
+    if ( str.empty() || NonPrintableChars(str) ) {
+            std::cout << "Try with valid charachters\n";
+            return ;
     }
     i = -1;
     while ( ++i < nb ) {
+        if ( i > 7 )
+            break;
         if (std::stoi(str) - i == 0) {
             contacts[std::stoi(str)].PrintIndex();
         }
     }
-    if (i == nb) {
+    if (std::stoi(str) >= nb || std::stoi(str) >= 8) {
         std::cout << "\nERROR : Undefined contact\n";
         return ;
     }
