@@ -6,7 +6,7 @@
 #    By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/20 17:16:43 by yoelansa          #+#    #+#              #
-#    Updated: 2023/12/20 17:28:21 by yoelansa         ###   ########.fr        #
+#    Updated: 2023/12/21 16:01:28 by yoelansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FLAGS = -Wextra -Werror -Wall -std=c++98
 all : $(NAME)
 
 $(NAME) : $(SRC)
-		${CC}  $(SRC) -o $(NAME)
+		${CC} $(SRC) -o $(NAME)
 
 fclean :
 		${RM} $(NAME)
