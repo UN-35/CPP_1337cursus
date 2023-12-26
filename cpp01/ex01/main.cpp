@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 10:44:14 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/26 10:44:34 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/12/26 11:21:14 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int main() {
+    int n = 10;
+    Zombie* zom = zombieHorde(n , "look");
+    for (int i = 0; i < n; i++)
+        std::cout << zom[i].getname() << std::endl ;
+    delete[] zom;
+    
     return 0;
 }

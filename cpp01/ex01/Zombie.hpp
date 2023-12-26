@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 10:44:51 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/26 10:48:19 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/12/26 11:18:55 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,18 @@
 class Zombie
 {
 private:
-
+    std::string name;
 public:
     Zombie();
+    void setname(std::string name);
+    std::string getname();
     ~Zombie();
 };
-
-Zombie::Zombie()
-{
-}
-
-Zombie::~Zombie()
-{
-}
 
 
 //funcs
 
-
+Zombie* zombieHorde( int N, std::string name );
 
 
 #endif
