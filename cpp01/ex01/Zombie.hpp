@@ -1,27 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 16:25:33 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/12/26 10:39:15 by yoelansa         ###   ########.fr       */
+/*   Created: 2023/12/26 10:44:51 by yoelansa          #+#    #+#             */
+/*   Updated: 2023/12/26 10:48:19 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-Zombie::Zombie( std::string name )
+
+#include <iostream>
+
+
+
+class Zombie
 {
-    this->name = name;
-}
+private:
 
-void Zombie::announce( void ) {
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+public:
+    Zombie();
+    ~Zombie();
+};
+
+Zombie::Zombie()
+{
 }
 
 Zombie::~Zombie()
 {
-    std::cout << this->name << ": Destroyed.." << std::endl;
 }
+
+
+//funcs
+
+
+
+
+#endif
