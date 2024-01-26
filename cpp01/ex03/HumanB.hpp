@@ -6,7 +6,7 @@
 /*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:09:25 by uns-35            #+#    #+#             */
-/*   Updated: 2024/01/08 16:08:22 by uns-35           ###   ########.fr       */
+/*   Updated: 2024/01/26 16:57:22 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,13 @@ class HumanB
 {
 private:
     std::string name;
+    Weapon*  HumanBweap;
 public:
-    void attack();
-    void setWeapon( Weapon weap );
-    HumanB();
+    HumanB( std::string n );
     ~HumanB();
+    void setWeapon( Weapon &weap );
+    void attack();
 };
-
-void HumanB::setWeapon( Weapon weap ) {
-    //set the fuckin weapon mman
-}
-
-void HumanB::attack()
-{
-    //guess this is what i have todo just need to complete it //or if not try ro look into it!!!!!
-    Weapon weapon;
-    std::cout << name << "attack with their" << weapon.getType() << std::endl;
-}
-
-
-HumanB::HumanB()
-{
-}
-
-HumanB::~HumanB()
-{
-}
 
 
 #endif // !HUMANB_HPP

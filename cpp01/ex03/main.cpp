@@ -6,15 +6,18 @@
 /*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:03:14 by uns-35            #+#    #+#             */
-/*   Updated: 2024/01/08 15:04:08 by uns-35           ###   ########.fr       */
+/*   Updated: 2024/01/26 17:04:39 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
     {
+        
         Weapon club = Weapon("crude spiked club");
         HumanA bob("Bob", club);
         bob.attack();
