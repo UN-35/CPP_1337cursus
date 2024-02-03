@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/08 15:04:40 by uns-35            #+#    #+#              #
-#    Updated: 2024/01/26 19:31:06 by uns-35           ###   ########.fr        #
+#    Created: 2024/01/26 19:53:35 by uns-35            #+#    #+#              #
+#    Updated: 2024/02/03 18:27:09 by uns-35           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Weaponss
+NAME = Sed
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp Sed.cpp
 
 RM = rm -rf
 

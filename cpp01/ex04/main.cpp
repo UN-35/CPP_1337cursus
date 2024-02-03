@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:54:27 by uns-35            #+#    #+#             */
-/*   Updated: 2024/01/26 17:31:35 by uns-35           ###   ########.fr       */
+/*   Created: 2024/01/26 19:54:04 by uns-35            #+#    #+#             */
+/*   Updated: 2024/02/03 18:24:55 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Sed.hpp"
 
-
-HumanB::HumanB( std::string n ) : name(n), HumanBweap(NULL) {
-}
-HumanB::~HumanB() {
-}
-
-void HumanB::setWeapon( Weapon &weap ) {
-    this->HumanBweap = &weap;
-}
-
-
-void HumanB::attack() {
-    if (HumanBweap == NULL)
-        std::cout << "NO weapon to attack with" << std::endl;
-    else
-        std::cout << name << " attack with their " << HumanBweap->getType() << std::endl;
+int main( int ac, char *av[] ) {
+    if (ac != 4) {
+        std::cout << "Try valid arguments" << std::endl;
+        return 1;
+    } else {
+        Sed sed(av[1]);
+        sed.replace( av[2] , av[3]);
+    }
+    return 0;
 }

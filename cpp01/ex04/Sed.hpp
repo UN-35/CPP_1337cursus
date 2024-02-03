@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:54:27 by uns-35            #+#    #+#             */
-/*   Updated: 2024/01/26 17:31:35 by uns-35           ###   ########.fr       */
+/*   Created: 2024/01/26 19:54:25 by uns-35            #+#    #+#             */
+/*   Updated: 2024/02/03 10:54:14 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef SED_HPP
+#define SED_HPP
+
+#include <iostream>
+#include <fstream>
+
+class Sed
+{
+private:
+    std::string Infile;
+    std::string Outfile;
+public:
+    Sed( std::string infile );
+    ~Sed();
+    void replace( std::string s1, std::string s2 );
+};
 
 
-HumanB::HumanB( std::string n ) : name(n), HumanBweap(NULL) {
-}
-HumanB::~HumanB() {
-}
-
-void HumanB::setWeapon( Weapon &weap ) {
-    this->HumanBweap = &weap;
-}
-
-
-void HumanB::attack() {
-    if (HumanBweap == NULL)
-        std::cout << "NO weapon to attack with" << std::endl;
-    else
-        std::cout << name << " attack with their " << HumanBweap->getType() << std::endl;
-}
+#endif // !SED_HPP

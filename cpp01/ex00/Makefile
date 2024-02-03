@@ -6,7 +6,7 @@
 #    By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/21 16:24:52 by yoelansa          #+#    #+#              #
-#    Updated: 2024/01/08 13:38:06 by uns-35           ###   ########.fr        #
+#    Updated: 2024/02/03 14:36:19 by uns-35           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ RM = rm -rf
 
 CC = c++
 
-FLAGS = -Wextra -Werror -Wall -fsanitize=address -std=c++98
+CPPFLAGS = -Wextra -Werror -Wall -fsanitize=address -std=c++98
 
 all : $(NAME)
 
 $(NAME) : $(SRC)
-		${CC} $(SRC) $(FLAGS) -o $(NAME)
+		${CC} $(SRC) $(CPPFLAGS) -o $(NAME)
 
 fclean :
 		${RM} $(NAME)
