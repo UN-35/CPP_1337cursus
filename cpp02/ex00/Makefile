@@ -5,15 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/08 13:54:02 by uns-35            #+#    #+#              #
-#    Updated: 2024/02/05 18:12:38 by uns-35           ###   ########.fr        #
+#    Created: 2024/02/08 15:40:23 by uns-35            #+#    #+#              #
+#    Updated: 2024/02/08 15:40:47 by uns-35           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-all :
-	c++ -Wall -Werror -Wextra -std=c++98 main.cpp -o ThisIsBrain
+NAME = FixedNumber
+
+SRC = main.cpp Fixed.cpp
+
+RM = rm -rf
+
+CC = c++
+
+CPPFLAGS = -Wextra -Werror -Wall -std=c++98
+
+all : $(NAME)
+$(NAME) : $(SRC)
+		${CC} $(SRC) $(CPPFLAGS) -o $(NAME)
 
 fclean :
-	rm -rf ThisIsBrain
+		${RM} $(NAME)
 
 re : fclean all

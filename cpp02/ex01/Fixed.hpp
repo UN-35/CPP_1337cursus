@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 16:25:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/06 12:12:16 by uns-35           ###   ########.fr       */
+/*   Created: 2024/02/08 15:46:05 by uns-35            #+#    #+#             */
+/*   Updated: 2024/02/08 16:04:34 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
-#include <cstdlib>
+#include <cmath>
 
-class Zombie {
+
+
+class Fixed {
 private:
-    std::string name;
-
+    int FixedPointNum;
+    static const int FractBits = 8;
 public:
-    Zombie( std::string name );
-    ~Zombie();
-    void announce( void );
+    Fixed( void );
+    Fixed( const int number );
+    Fixed( const float FPN );
+    ~Fixed( void );
+    
+    Fixed(Fixed& f);
+    Fixed& operator=(Fixed& f);
+
+    float toFloat( void );
+    int toInt( void );
+
+    int getRawBits( void ) const;
+    void setRawBits( int const raw );
 };
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
 
-#endif
+#endif // !FIXED_HPP
