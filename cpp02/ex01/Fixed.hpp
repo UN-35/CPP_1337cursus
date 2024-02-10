@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:46:05 by uns-35            #+#    #+#             */
-/*   Updated: 2024/02/08 16:04:34 by uns-35           ###   ########.fr       */
+/*   Updated: 2024/02/10 11:41:43 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ public:
     void setRawBits( int const raw );
 };
 
+std::ostream& operator<<( std::ostream& ostream, Fixed const& obj);
 
 #endif // !FIXED_HPP
