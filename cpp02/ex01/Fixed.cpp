@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:50:50 by uns-35            #+#    #+#             */
-/*   Updated: 2024/02/10 11:58:22 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:06:18 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ Fixed::Fixed( const int number ) {
 }
 Fixed::Fixed( const float number ) {
     std::cout << "Float constructor called" << std::endl;
-    FixedPointNum = std::roundf( number * ( 1 << FractBits ) );
+    FixedPointNum = roundf( number * ( 1 << FractBits ) );
 }
 
 
 //Fixed class copy constractor
-Fixed::Fixed( Fixed& f ) {
+Fixed::Fixed( Fixed const& f ) {
     std::cout << "Copy constructor called" << std::endl;
     this->setRawBits( f.getRawBits() );
 }
 
 //Fixed class copy assignment operator
-Fixed& Fixed::operator=( Fixed& f ) {
+Fixed& Fixed::operator=( Fixed const& f ) {
     std::cout << "Copy assignment operator called" << std::endl;
     if ( this != &f )
         this->FixedPointNum = f.getRawBits();
@@ -48,7 +48,6 @@ Fixed::~Fixed() {
 
 //Fixed class member functions
 int Fixed::getRawBits( void ) const {
-    std::cout << "getRawBits member function called" << std::endl;
     return this->FixedPointNum;
 }
 void Fixed::setRawBits( int const raw ) {
@@ -56,15 +55,18 @@ void Fixed::setRawBits( int const raw ) {
 }
 
 
-
-float Fixed::toFloat( void ) {
+float Fixed::toFloat( void ) const {
     return static_cast<float>( this->getRawBits() ) / ( 1 << FractBits );
 }
-int Fixed::toInt( void ) {
+int Fixed::toInt( void ) const {
     return this->FixedPointNum >> FractBits;
 }
 
-std::ostream& operator<<( std::ostream& ostream, Fixed const& obj) {
-    ostream << obj.toFloat();
+
+std::ostream& operator<<( std::ostream& ostream, Fixed const& op) {
+    ostream << op.toFloat();
     return ostream;
 }
+
+
+
