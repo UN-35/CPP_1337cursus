@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/yoelansa/dev/CPP_1337cursus/cpp02/ex01",
-      "program": "/home/yoelansa/dev/CPP_1337cursus/cpp02/ex01/build/Debug/outDebug",
+      "cwd": "/Users/yoelansa/Desktop/cpp/cpp02/ex02",
+      "program": "/Users/yoelansa/Desktop/cpp/cpp02/ex02/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
