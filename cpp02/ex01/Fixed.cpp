@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:56:00 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/13 14:56:03 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/14 21:57:17 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::Fixed( const float number ) {
 //Fixed class copy constractor
 Fixed::Fixed( Fixed const& f ) {
     std::cout << "Copy constructor called" << std::endl;
-    this->setRawBits( f.getRawBits() );
+    *this = f;
 }
 
 //Fixed class copy assignment operator

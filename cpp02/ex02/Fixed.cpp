@@ -3,50 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:56:24 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/13 14:56:27 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/14 21:55:29 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-//Fixed class constractors
+//Fixed:: class constractors
 Fixed::Fixed( void ) {
-    // std::cout << "Default constructor called" << std::endl;
     this->FixedPointNum = 0;
 }
 Fixed::Fixed( const int number ) {
-    // std::cout << "Int constructor called" << std::endl;
     FixedPointNum = number << FractBits;
 }
 Fixed::Fixed( const float number ) {
-    // std::cout << "Float constructor called" << std::endl;
     FixedPointNum = roundf( number * ( 1 << FractBits ) );
 }
 
-
-//Fixed class copy constractor
+//Fixed:: class copy constractor
 Fixed::Fixed( Fixed const& f ) {
-    // std::cout << "Copy constructor called" << std::endl;
     this->setRawBits( f.getRawBits() );
 }
 
-//Fixed class copy assignment operator
+//Fixed:: class copy assignment operator
 Fixed& Fixed::operator=( Fixed const& f ) {
-    // std::cout << "Copy assignment operator called" << std::endl;
     if ( this != &f )
         this->FixedPointNum = f.getRawBits();
     return *this;
 }
 
-//Fixed class Destractor
+//Fixed:: class Destractor
 Fixed::~Fixed() {
-    // std::cout << "Destructor called" << std::endl;
 }
 
-//Fixed class member functions
+//Fixed:: class member functions
 int Fixed::getRawBits( void ) const {
     return this->FixedPointNum;
 }
