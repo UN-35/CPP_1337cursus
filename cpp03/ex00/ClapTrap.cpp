@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:15 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/16 11:36:20 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/16 14:28:41 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,25 @@ ClapTrap::ClapTrap( ClapTrap& ) {
 ClapTrap& ClapTrap::operator=( ClapTrap const& ) {
     return *this;
 }
-
 ClapTrap::~ClapTrap() {
 }
-
 void ClapTrap::attack( const std::string& target ) {
-    std::cout << this->Name << " attack " << target << std::endl;
+    if ( EnergyPoints > 0 && HitPoints > 0 ) {
+        std::cout << this->Name << " attack " << target << std::endl;
+        this->EnergyPoints--;
+    }
 }
 void ClapTrap::takeDamage ( unsigned int amount ) {
-    this->HitPoints -= amount;
-    std::cout << this->HitPoints << std::endl;
+    if ( EnergyPoints > 0 && HitPoints > 0 ) {
+        this->HitPoints -= amount;
+        std::cout << this->HitPoints << std::endl;
+    }
 }
 void ClapTrap::beRepaired ( unsigned int amount ) {
-    if (this->EnergyPoints <= 0)
-        return ;
-    this->AttackDamage += amount;
-    this->EnergyPoints -= amount;
-    std::cout << this->AttackDamage << std::endl;
-    std::cout << this->EnergyPoints << std::endl;
+    if ( HitPoints > 0 && EnergyPoints > 0 ) {
+        this->AttackDamage += amount;
+        this->EnergyPoints--;
+        std::cout << this->AttackDamage << std::endl;
+        std::cout << this->EnergyPoints << std::endl;
+    }
 }
