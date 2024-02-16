@@ -6,7 +6,7 @@
 /*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:15 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/16 14:28:41 by uns-35           ###   ########.fr       */
+/*   Updated: 2024/02/16 17:35:55 by uns-35           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ ClapTrap::ClapTrap( std::string name ) {
     this->AttackDamage = 0;
 }
 // Copy Constructor
-ClapTrap::ClapTrap( ClapTrap& ) {
+ClapTrap::ClapTrap( ClapTrap const& C ) {
+    *this = C;
 }
 // Copy assignment
-ClapTrap& ClapTrap::operator=( ClapTrap const& ) {
+ClapTrap& ClapTrap::operator=( ClapTrap const& C ) {
+    if (this != &C)
+        *this = C;
     return *this;
 }
 ClapTrap::~ClapTrap() {
@@ -48,4 +51,9 @@ void ClapTrap::beRepaired ( unsigned int amount ) {
         std::cout << this->AttackDamage << std::endl;
         std::cout << this->EnergyPoints << std::endl;
     }
+}
+
+
+void ClapTrap::setName( std::string name ) {
+    this->Name = name;
 }
