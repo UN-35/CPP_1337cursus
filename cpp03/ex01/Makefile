@@ -6,13 +6,13 @@
 #    By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/15 15:36:12 by yoelansa          #+#    #+#              #
-#    Updated: 2024/02/16 20:54:35 by yoelansa         ###   ########.fr        #
+#    Updated: 2024/02/17 16:24:58 by yoelansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 RM = rm -rf
 
