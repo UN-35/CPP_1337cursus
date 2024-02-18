@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:15 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/18 16:18:30 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/18 19:50:01 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 //ClapTrap constructor
 ClapTrap::ClapTrap( void ) : HitPoints(10), EnergyPoints(10), AttackDamage(0){
     std::cout << "This is ClapTrap Default constructor!!" << std::endl;
-
 }
 ClapTrap::ClapTrap( std::string name ) : HitPoints(10), EnergyPoints(10), AttackDamage(0) {
     std::cout << "This is ClapTrap constructor!!" << std::endl;
