@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:03:19 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/18 16:21:54 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/18 17:40:18 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ScavTrap::ScavTrap( ScavTrap const& S ) : ClapTrap( S ) {
     std::cout << "This is ScavTrap copy constructor!!" << std::endl;
     *this = S;
 }
-ScavTrap& ScavTrap::operator=( ScavTrap const& S) {
+ScavTrap& ScavTrap::operator=( ScavTrap const& S ) {
     if (this != &S) {
         AttackDamage = S.AttackDamage;
         HitPoints = S.HitPoints;

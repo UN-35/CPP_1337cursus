@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uns-35 <uns-35@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:15 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/16 17:35:55 by uns-35           ###   ########.fr       */
+/*   Updated: 2024/02/18 16:18:30 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,51 @@
 
 
 //ClapTrap constructor
-ClapTrap::ClapTrap( std::string name ) {
-    this->Name = name;
-    this->HitPoints = 10;
-    this->EnergyPoints = 10;
-    this->AttackDamage = 0;
+ClapTrap::ClapTrap( void ) : HitPoints(10), EnergyPoints(10), AttackDamage(0){
+    std::cout << "This is ClapTrap Default constructor!!" << std::endl;
+
+}
+ClapTrap::ClapTrap( std::string name ) : HitPoints(10), EnergyPoints(10), AttackDamage(0) {
+    std::cout << "This is ClapTrap constructor!!" << std::endl;
+    Name = name;
 }
 // Copy Constructor
 ClapTrap::ClapTrap( ClapTrap const& C ) {
+    std::cout << "This is ClapTrap copy constructor!!" << std::endl;
     *this = C;
 }
 // Copy assignment
 ClapTrap& ClapTrap::operator=( ClapTrap const& C ) {
-    if (this != &C)
-        *this = C;
+    if (this != &C) {
+        AttackDamage = C.AttackDamage;
+        HitPoints = C.HitPoints;
+        EnergyPoints = C.EnergyPoints;
+        Name = C.Name;
+    }
     return *this;
 }
 ClapTrap::~ClapTrap() {
+    std::cout << "This is ClapTrap destructor!!" << std::endl;
 }
 void ClapTrap::attack( const std::string& target ) {
     if ( EnergyPoints > 0 && HitPoints > 0 ) {
-        std::cout << this->Name << " attack " << target << std::endl;
+        std::cout << "ClapTrap " << Name << " attacks " << target << ", causing " << EnergyPoints << " points of damage!" << std::endl;
         this->EnergyPoints--;
     }
 }
 void ClapTrap::takeDamage ( unsigned int amount ) {
     if ( EnergyPoints > 0 && HitPoints > 0 ) {
-        this->HitPoints -= amount;
-        std::cout << this->HitPoints << std::endl;
+        if (HitPoints >= amount)
+            HitPoints -= amount;
+        else
+            HitPoints = 0;
+        std::cout << "ClapTrap " << Name << " takes damage, decrementing hit points by " << amount << std::endl;
     }
 }
 void ClapTrap::beRepaired ( unsigned int amount ) {
     if ( HitPoints > 0 && EnergyPoints > 0 ) {
-        this->AttackDamage += amount;
-        this->EnergyPoints--;
-        std::cout << this->AttackDamage << std::endl;
-        std::cout << this->EnergyPoints << std::endl;
+        AttackDamage += amount;
+        EnergyPoints--;
+        std::cout << "ClapTrap " << Name << " been repaired, encrementing attack damage by "<< amount <<  std::endl;
     }
-}
-
-
-void ClapTrap::setName( std::string name ) {
-    this->Name = name;
 }

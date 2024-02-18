@@ -6,21 +6,23 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:36:05 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/18 16:01:28 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/18 17:45:06 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-    ClapTrap clap("clap");
-    ClapTrap trap("trap");
+    FragTrap Scav("Scav");
+    FragTrap trap("trap");
     
-    clap.attack ("trap");
+    Scav.attack ("trap");
     trap.takeDamage(0);
-    trap.attack("clap");
+    trap.attack("Scav");
     trap.beRepaired(1);
-    clap.beRepaired(3);
+    Scav.beRepaired(3);
+
+    Scav.guardGate();
     
-    
+    trap.highFivesGuys();
 }
