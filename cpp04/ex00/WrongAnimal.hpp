@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 17:49:38 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 16:29:31 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/02/20 16:26:34 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/02/20 17:09:06 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include <iostream>
 
-class Animal {
+#include "Animal.hpp"
+
+
+
+class WrongAnimal {
 protected:
-    std::string type;
+    std::string Type;
 public:
-    Animal();
-    Animal( std::string T );
-    Animal( Animal const& obj );
-    Animal& operator=( Animal const& obj );
-    std::string getType() const;
-    void makeSound() const;
-    ~Animal();
+    WrongAnimal();
+    WrongAnimal( WrongAnimal const& obj );
+    WrongAnimal& operator=( WrongAnimal const& obj );
+    ~WrongAnimal();
+
+    std::string getType( void );
+    void makeSound( void );
 };
 
 
 
-#endif // !ANIMAL_HPP
+#endif // !WRONGANIMAL_HPP
