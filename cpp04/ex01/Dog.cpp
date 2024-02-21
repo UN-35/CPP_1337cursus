@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:24:10 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 20:11:42 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/20 22:40:15 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,20 @@
 
 
 Dog::Dog() : Animal( "Dog" ) {
-    std::cout << "this is the Dog default constructor" << std::endl;
-    brain = new Brain();
+    std::cout << "this is the Dog constructor" << std::endl;
 }
 Dog::~Dog() {
     std::cout << "this is the Dog destructor" << std::endl;
-    delete brain;
 }
-Dog::Dog( Dog const& obj ) : Animal( obj ) , Brain( obj ) {
+Dog::Dog( Dog const& obj ) : Animal( obj ) {
     std::cout << "this is the Dog copy constructor" << std::endl;
     *this = obj;
 }
 Dog& Dog::operator=( Dog const& obj ) {
     std::cout << "this is the Dog copy assignment" << std::endl;
-    if ( type != obj.type )
-        type = obj.type;
+    type = obj.type;
     return *this;
 }
-void Dog::makeSound() {
+void Dog::makeSound() const {
     std::cout << "Bark Bark" << std::endl;
 }

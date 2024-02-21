@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:34 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 17:09:06 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/20 22:41:33 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ class WrongAnimal {
 protected:
     std::string Type;
 public:
-    WrongAnimal();
+    WrongAnimal( void );
+    WrongAnimal( std::string T );
     WrongAnimal( WrongAnimal const& obj );
     WrongAnimal& operator=( WrongAnimal const& obj );
-    ~WrongAnimal();
+    ~WrongAnimal( void );
 
-    std::string getType( void );
-    void makeSound( void );
+    std::string getType( void ) const;
+    void makeSound( void ) const;
 };
 
 

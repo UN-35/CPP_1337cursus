@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:49:38 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 16:29:31 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/20 22:36:51 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ class Animal {
 protected:
     std::string type;
 public:
-    Animal();
+    Animal( void );
     Animal( std::string T );
     Animal( Animal const& obj );
     Animal& operator=( Animal const& obj );
-    std::string getType() const;
-    void makeSound() const;
-    ~Animal();
+    ~Animal( void );
+
+    void makeSound( void ) const;
+    std::string getType( void ) const;
 };
 
 
