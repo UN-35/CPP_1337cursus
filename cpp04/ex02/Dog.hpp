@@ -6,18 +6,20 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:24:56 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 22:40:08 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:37:05 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
 
-
-class Dog : public Animal {
+class Dog : public AAnimal {
+private:
+    Brain* dogBrain;
 public:
     Dog( void );
     Dog( Dog const& obj );

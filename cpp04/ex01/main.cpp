@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:07:38 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 18:50:58 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:22:47 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,9 @@ int main()
     meta->makeSound();
     WrongCat cat;
     cat.makeSound();
+    delete i;
+    delete j;
+    delete meta;
     return 0;
 }
+

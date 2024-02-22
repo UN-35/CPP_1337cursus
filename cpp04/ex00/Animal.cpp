@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:41:06 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 22:35:10 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:32:05 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ Animal::Animal( Animal const& obj ) {
     std::cout << "this is the Animal copy constructor" << std::endl;
     *this = obj;
 }
-Animal& Animal::operator=( Animal const& ) {
+Animal& Animal::operator=( Animal const& obj ) {
     std::cout << "this is the Animal copy assignment" << std::endl;
+    type = obj.type;
     return *this;
 }
 std::string Animal::getType() const {

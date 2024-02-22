@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:34 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 22:41:33 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:17:52 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define WRONGANIMAL_HPP
 
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 
 
@@ -26,7 +26,7 @@ public:
     WrongAnimal( std::string T );
     WrongAnimal( WrongAnimal const& obj );
     WrongAnimal& operator=( WrongAnimal const& obj );
-    ~WrongAnimal( void );
+    virtual ~WrongAnimal( void );
 
     std::string getType( void ) const;
     void makeSound( void ) const;

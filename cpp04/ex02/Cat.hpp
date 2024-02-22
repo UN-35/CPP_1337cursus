@@ -6,18 +6,20 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:23:14 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/20 22:38:55 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:36:32 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
 
-
-class Cat : public Animal {
+class Cat : public AAnimal {
+private:
+    Brain* catBrain;
 public:
     Cat( void );
     Cat( Cat const& obj );
