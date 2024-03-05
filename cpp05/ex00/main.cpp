@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 17:49:38 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/02/22 18:57:34 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/03/04 20:48:44 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-
-class Animal {
-protected:
-    std::string type;
-public:
-    Animal( void );
-    Animal( std::string T );
-    Animal( Animal const& obj );
-    Animal& operator=( Animal const& obj );
-    ~Animal( void );
-
-    virtual void makeSound( void ) const;
-    std::string getType( void ) const;
-};
-
-
-
-#endif // !ANIMAL_HPP
+int main() {
+    try {
+        Bureaucrat B("LORD", 150);
+        // B.decrement();
+        std::cout << "BUUReauCrat" << std::endl;
+        B.increment();
+    } catch ( std::exception &e ) {
+        std::cout << e.what() << std::endl;
+        return 1;
+    }
+}
