@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/04 20:34:33 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:27:23 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ Bureaucrat::Bureaucrat( std::string const& name, int grade ) {
         throw GradeTooHighException();
     this->grade = grade;
 }
-
-
 
 std::string const& Bureaucrat::getName() const {
     return name;
@@ -40,6 +38,17 @@ void Bureaucrat::decrement() {
         throw GradeTooHighException();
     grade--;
 }
+
+
+// GradeTooHighException what()
+const char* Bureaucrat::GradeTooHighException::what() {
+    return "GradeTooHighException";
+}
+// GradeTooLowException what()
+const char* Bureaucrat::GradeTooLowException::what() {
+    return "GradeTooLowException";
+}
+
 
 
 std::ostream& operator<<( std::ostream& ostream, Bureaucrat const& op) {
