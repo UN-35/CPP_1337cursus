@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:51 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/08 21:54:00 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:14:07 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 #include <iostream>
 #include <cstdlib>
+#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat {
     private:
@@ -40,6 +43,8 @@ class Bureaucrat {
             public:
                 virtual const char *what() const throw();
         };
+
+        void signAForm( AForm& F );
 };
 
 

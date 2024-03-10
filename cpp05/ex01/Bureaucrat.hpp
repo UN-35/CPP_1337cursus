@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:51 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/07 16:02:30 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:46:42 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 #include <iostream>
 #include <cstdlib>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
     private:
@@ -32,14 +35,16 @@ class Bureaucrat {
         void increment();
         void decrement();
 
-        class GradeTooHighException : std::exception {
+        class GradeTooHighException : public std::exception {
             public:
-                virtual const char *what();
+                virtual const char *what() const throw();
         };
-        class GradeTooLowException : std::exception {
+        class GradeTooLowException : public std::exception {
             public:
-                virtual const char *what();
+                virtual const char *what() const throw();
         };
+
+        void signForm( Form F );
 };
 
 

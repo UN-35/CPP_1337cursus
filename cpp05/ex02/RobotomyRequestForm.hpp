@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/08 22:37:00 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/03/09 12:43:27 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/03/09 12:48:13 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
-int main() {
-    try {
-        Bureaucrat B("LORD", 150);
-        // B.decrement();
-        std::cout << "BUUReauCrat" << std::endl;
-        B.increment();
-    } catch ( std::exception &e ) {
-        std::cout << e.what() << std::endl;
-        // return 1;
-    }
-}
 
+#include "AForm.hpp"
+
+class RobotomyRequestForm : public AForm {
+    private:
+        std::string target;
+        RobotomyRequestForm();
+    public:
+        RobotomyRequestForm( std::string target );
+        ~RobotomyRequestForm();
+        void execute( Bureaucrat B ) const;
+};
+
+
+
+
+
+#endif 

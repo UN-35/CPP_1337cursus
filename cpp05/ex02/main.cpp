@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/08 22:37:00 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:09:42 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 int main() {
     try {
-        Bureaucrat B("LORD", 150);
-        // B.decrement();
-        std::cout << "BUUReauCrat" << std::endl;
-        B.increment();
+        Bureaucrat B("LORD", 8);
     } catch ( std::exception &e ) {
         std::cout << e.what() << std::endl;
-        // return 1;
+        return 1;
     }
 }
-

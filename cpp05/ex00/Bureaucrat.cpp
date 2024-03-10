@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/07 16:02:33 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/08 21:54:09 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ void Bureaucrat::decrement() {
 
 
 // GradeTooHighException what()
-const char* Bureaucrat::GradeTooHighException::what() {
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
     return "GradeTooHighException";
 }
 // GradeTooLowException what()
-const char* Bureaucrat::GradeTooLowException::what() {
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
     return "GradeTooLowException";
 }
 

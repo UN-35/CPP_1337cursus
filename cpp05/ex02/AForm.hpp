@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:09:37 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/08 22:45:14 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/09 12:36:12 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 class Bureaucrat;
 
-class Form {
+class AForm {
     private:
         std::string name;
         bool Sign;
         const int GradeSign;
         const int GradeExec;
-        Form( void );
+        AForm( void );
     public:
-        Form( std::string n, int GS, int GE);
-        // Form( Form const& );
-        // Form& operator=();
+        AForm( std::string n, int GS, int GE);
+        // AForm( AForm const& );
+        // AForm& operator=();
 
         std::string getName() const;
         bool getSign() const;
@@ -42,11 +42,14 @@ class Form {
             public:
                 virtual const char* what() const throw();
         };
-
+        class FormNotSignedException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
         void beSigned( Bureaucrat B );
+        virtual void execute( Bureaucrat B ) const = 0;
 
-
-        ~Form();
+        virtual ~AForm();
 };
 
 

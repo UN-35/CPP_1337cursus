@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,41 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form( std::string n, int GS, int GE ) : name(n), Sign(false), GradeSign(GS), GradeExec(GE) {
+AForm::AForm( std::string n, int GS, int GE ) : name(n), Sign(false), GradeSign(GS), GradeExec(GE) {
 }
 
 
-std::string Form::getName() const {
+std::string AForm::getName() const {
     return name;
 }
-bool Form::getSign() const {
+bool AForm::getSign() const {
     return Sign;
 }
-int Form::getGradeSign() const {
+int AForm::getGradeSign() const {
     return GradeSign;
 }
-int Form::getGradeExec() const {
+int AForm::getGradeExec() const {
     return GradeExec;
 }
 
 
-const char* Form::GradeTooHighException::what() const throw() {
+const char* AForm::GradeTooHighException::what() const throw() {
     return "GradeTooHighException";
 }
-const char* Form::GradeTooLowException::what() const throw() {
+const char* AForm::GradeTooLowException::what() const throw() {
     return "GradeTooLowException";
 }
+const char* AForm::FormNotSignedException::what() const throw() {
+    return "FormNotSignedException";
+}
 
-
-void Form::beSigned( Bureaucrat B) {
+void AForm::beSigned( Bureaucrat B) {
     if ( B.getGrade() <= GradeSign )
         Sign = true;
     else
         throw GradeTooLowException();
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 }

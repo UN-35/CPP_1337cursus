@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/08 22:46:56 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:13:58 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ std::ostream& operator<<( std::ostream& ostream, Bureaucrat const& op) {
     return ostream;
 }
 
-void Bureaucrat::signForm( Form F ) {
+void Bureaucrat::signAForm( AForm& F ) {
     try {
         F.beSigned( *this );
         std::cout << name << " signed " << F.getName() << std::endl;
