@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 21:36:10 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/13 04:59:33 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:03:34 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ class Intern : public AForm {
     private :
         Intern( void );
     public :
-        Intern( const Intern& );
-        Intern& operator=( const Intern& );
+        Intern( const Intern& obj );
+        Intern& operator=( const Intern& obj );
         ~Intern();
-        void makeForm( std::string Fname, std::string Ftarget );
+        AForm* makeForm( std::string Fname, std::string Ftarget );
 
 };
 
-Intern::Intern( const Intern& ) {}
-Intern& Intern::operator=( const Intern& ) {}
-Intern::~Intern() {}
+
 
 #endif

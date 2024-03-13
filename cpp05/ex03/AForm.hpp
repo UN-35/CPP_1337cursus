@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:09:37 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/12 13:41:50 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:57:27 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class AForm {
         AForm( void );
     public:
         AForm( std::string n, int GS, int GE);
-        // AForm( AForm const& );
-        // AForm& operator=();
+        AForm( AForm const& obj );
+        AForm& operator=( AForm const& obj );
+        virtual ~AForm();
 
         std::string getName() const;
         bool getSign() const;
@@ -49,7 +50,6 @@ class AForm {
         void beSigned( Bureaucrat B );
         virtual void execute( Bureaucrat B ) const = 0;
 
-        virtual ~AForm();
 };
 
 
