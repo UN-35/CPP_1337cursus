@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/13 13:09:57 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/03/12 21:36:10 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/03/13 04:59:33 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
-int main() {
-    try {
-        Bureaucrat B("LORD", 11);
-        Form F("Form", 12, 70);
-        B.signForm(F);
-    } catch ( std::exception &e ) {
-        std::cout << e.what() << std::endl;
-        return 1;
-    }
-}
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
+
+class Intern : public AForm {
+    private :
+        Intern( void );
+    public :
+        Intern( const Intern& );
+        Intern& operator=( const Intern& );
+        ~Intern();
+        void makeForm( std::string Fname, std::string Ftarget );
+
+};
+
+Intern::Intern( const Intern& ) {}
+Intern& Intern::operator=( const Intern& ) {}
+Intern::~Intern() {}
+
+#endif

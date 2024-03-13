@@ -12,21 +12,8 @@
 
 #include "AForm.hpp"
 
-AForm::AForm( std::string n, int GS, int GE ) 
-    : name(n), Sign(false), GradeSign(GS), GradeExec(GE) {}
-
-
-AForm::AForm( AForm const& obj ) 
-    : name(obj.name), Sign(obj.Sign), 
-    GradeSign(obj.GradeSign), 
-    GradeExec(obj.GradeExec) {}
-
-AForm& AForm::operator=( AForm const& obj ) {
-    Sign = obj.Sign;
-    return *this;
+AForm::AForm( std::string n, int GS, int GE ) : name(n), Sign(false), GradeSign(GS), GradeExec(GE) {
 }
-
-AForm::~AForm() {}
 
 
 std::string AForm::getName() const {
@@ -68,4 +55,8 @@ std::ostream& operator<<( std::ostream& os, const AForm& form ) {
     os << "Grade to be signed : " << form.getGradeSign() << std::endl;
     os << "Grade to be execute : " << form.getGradeExec();
     return os;
+}
+
+AForm::~AForm()
+{
 }

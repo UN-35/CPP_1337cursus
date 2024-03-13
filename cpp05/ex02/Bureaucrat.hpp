@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:51 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/09 13:14:07 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:17:35 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ class Bureaucrat {
         Bureaucrat();
     public:
         Bureaucrat( std::string const& name, int grade );
-        ~Bureaucrat();
+        Bureaucrat( const Bureaucrat& obj );
+        Bureaucrat& operator=( const Bureaucrat& obj );
+        virtual ~Bureaucrat();
 
         std::string const& getName() const;
         int getGrade() const;

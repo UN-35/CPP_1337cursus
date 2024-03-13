@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:51 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/13 13:03:56 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/12 23:15:56 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
     private:
@@ -29,7 +29,7 @@ class Bureaucrat {
         Bureaucrat( std::string const& name, int grade );
         Bureaucrat( const Bureaucrat& obj );
         Bureaucrat& operator=( const Bureaucrat& obj );
-        virtual ~Bureaucrat();
+        ~Bureaucrat();
 
         std::string const& getName() const;
         int getGrade() const;
@@ -46,7 +46,7 @@ class Bureaucrat {
                 virtual const char *what() const throw();
         };
 
-        void signForm( Form F );
+        void signAForm( AForm& F );
 };
 
 

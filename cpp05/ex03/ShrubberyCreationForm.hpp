@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/13 13:09:57 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/03/09 12:11:25 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/03/09 12:38:20 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
-int main() {
-    try {
-        Bureaucrat B("LORD", 11);
-        Form F("Form", 12, 70);
-        B.signForm(F);
-    } catch ( std::exception &e ) {
-        std::cout << e.what() << std::endl;
-        return 1;
-    }
-}
+#include "AForm.hpp"
+#include <fstream>
+
+
+class ShrubberyCreationForm : public AForm {
+    private:
+        ShrubberyCreationForm();
+        std::string target;
+    public:
+        ShrubberyCreationForm( std::string target );
+        ~ShrubberyCreationForm();
+        void execute( Bureaucrat B ) const;
+};
+
+
+
+
+#endif

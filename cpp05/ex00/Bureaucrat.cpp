@@ -6,21 +6,28 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/08 21:54:09 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:01:53 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 
-Bureaucrat::Bureaucrat( std::string const& name, int grade ) {
-    this->name = name;
+Bureaucrat::Bureaucrat( std::string const& name, int grade ): name(name), grade(grade) {
     if ( grade > 150 )
         throw GradeTooLowException();
     else if ( grade < 0 )
         throw GradeTooHighException();
-    this->grade = grade;
 }
+
+Bureaucrat::Bureaucrat( const Bureaucrat& obj ): name(obj.name), grade(obj.grade) {}
+
+Bureaucrat& Bureaucrat::operator=( const Bureaucrat& obj ) {
+    grade = obj.grade;
+    return *this;
+}
+
+Bureaucrat::~Bureaucrat() {}
 
 std::string const& Bureaucrat::getName() const {
     return name;
@@ -59,6 +66,3 @@ std::ostream& operator<<( std::ostream& ostream, Bureaucrat const& op) {
 
 
 
-Bureaucrat::~Bureaucrat()
-{
-}
