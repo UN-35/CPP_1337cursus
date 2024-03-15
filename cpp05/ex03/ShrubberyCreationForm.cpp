@@ -6,15 +6,15 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:13:50 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/09 13:12:32 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:32:50 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string target ): AForm( "ShrubberyCreationForm" , 145, 137 ), target( target ) {
-}
+ShrubberyCreationForm::ShrubberyCreationForm( std::string target )
+    : AForm( "ShrubberyCreationForm" , 145, 137 ), target( target ) {}
 
 void ShrubberyCreationForm::execute( Bureaucrat B ) const {
     if ( B.getGrade() > this->getGradeSign() )
@@ -43,5 +43,4 @@ void ShrubberyCreationForm::execute( Bureaucrat B ) const {
 }
 
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
-}
+ShrubberyCreationForm::~ShrubberyCreationForm() {}

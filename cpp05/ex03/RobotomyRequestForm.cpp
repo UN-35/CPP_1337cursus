@@ -6,15 +6,15 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:48:14 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/09 13:00:13 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:32:08 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 
-RobotomyRequestForm::RobotomyRequestForm( std::string target ): AForm( "RobotomyRequestForm", 72, 45 ), target(target) {
-}
+RobotomyRequestForm::RobotomyRequestForm( std::string target )
+    : AForm( "RobotomyRequestForm", 72, 45 ), target(target) {}
 
 
 void RobotomyRequestForm::execute( Bureaucrat B ) const {
@@ -32,5 +32,4 @@ void RobotomyRequestForm::execute( Bureaucrat B ) const {
         std::cout << target << "has been robotomized failed" << std::endl;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm() {
-}
+RobotomyRequestForm::~RobotomyRequestForm() {}

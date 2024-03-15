@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 13:03:35 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/09 13:06:02 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:06:37 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 
 
-PresidentialPardonForm::PresidentialPardonForm( std::string target ) : AForm( "PresidentialPardonForm", 25, 5), target( target ) {
-}
+PresidentialPardonForm::PresidentialPardonForm( std::string target )
+    : AForm( "PresidentialPardonForm", 25, 5), target( target ) {}
 
 void PresidentialPardonForm::execute( Bureaucrat B ) const {
     if ( B.getGrade() > this->getGradeSign() )
@@ -26,5 +26,4 @@ void PresidentialPardonForm::execute( Bureaucrat B ) const {
     std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm() {
-}
+PresidentialPardonForm::~PresidentialPardonForm() {}
