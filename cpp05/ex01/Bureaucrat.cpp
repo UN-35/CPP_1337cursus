@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/13 04:58:21 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/15 21:13:01 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ std::string const& Bureaucrat::getName() const {
 int Bureaucrat::getGrade() const {
     return grade;
 }
-void Bureaucrat::increment() {
+void Bureaucrat::decrement() {
     if ( grade + 1 > 150 )
         throw GradeTooLowException();
     grade++;
 }
-void Bureaucrat::decrement() {
+void Bureaucrat::increment() {
     if ( grade - 1 < 0 )
         throw GradeTooHighException();
     grade--;
