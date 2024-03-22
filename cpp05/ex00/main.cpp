@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/15 21:15:08 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:18:38 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main() {
         B.increment();
     } catch ( std::exception &e ) {
         std::cout << e.what() << std::endl;
-        // return 1;
     }
+    return 0;
 }
 

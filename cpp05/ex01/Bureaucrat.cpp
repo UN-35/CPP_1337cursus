@@ -6,12 +6,11 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/15 21:13:01 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/21 03:24:20 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 
 Bureaucrat::Bureaucrat( std::string const& name, int grade ): name(name), grade(grade) {
     this->name = name;
@@ -74,6 +73,4 @@ void Bureaucrat::signForm( Form F ) {
     }
 }
 
-Bureaucrat::~Bureaucrat()
-{
-}
+Bureaucrat::~Bureaucrat() {}
