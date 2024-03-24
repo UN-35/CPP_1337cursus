@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/22 15:25:25 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:34:49 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,19 @@ int main( void )
 		RobotomyRequestForm rb("robot");
 		PresidentialPardonForm pr("Presid");
 
-		std::cout << std::endl;
 		sh.beSigned(bureau);
 		std::cout << sh << std::endl;
-		bureau.signAForm(sh);
+		bureau.signForm(sh);
 
 		std::cout << std::endl;
 		rb.beSigned(bureau);
 		std::cout << rb << std::endl;
-		bureau.signAForm(rb);
+		bureau.signForm(rb);
 
 		std::cout << std::endl;
 		pr.beSigned(bureau);
 		std::cout << pr << std::endl;
-		bureau.signAForm(pr);
+		bureau.signForm(pr);
 
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;

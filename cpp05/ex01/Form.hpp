@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:09:37 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/16 00:20:03 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:27:19 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Bureaucrat;
 
 class Form {
     private:
-        std::string name;
+        const std::string name;
         bool Sign;
         const int GradeSign;
         const int GradeExec;

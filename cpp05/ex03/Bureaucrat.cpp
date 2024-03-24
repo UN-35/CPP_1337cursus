@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/15 21:14:17 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/24 22:00:20 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 
 Bureaucrat::Bureaucrat( std::string const& name, int grade ): name(name), grade(grade) {
-    this->name = name;
     if ( grade > 150 )
         throw GradeTooLowException();
     else if ( grade < 0 )
         throw GradeTooHighException();
-    this->grade = grade;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat& obj ): name(obj.name), grade(obj.grade) {}
@@ -65,7 +63,7 @@ std::ostream& operator<<( std::ostream& ostream, Bureaucrat const& op) {
     return ostream;
 }
 
-void Bureaucrat::signAForm( AForm& F ) {
+void Bureaucrat::signForm( AForm& F ) {
     try {
         F.beSigned( *this );
         std::cout << name << " signed " << F.getName() << std::endl;
@@ -74,6 +72,16 @@ void Bureaucrat::signAForm( AForm& F ) {
         std::cout << name << " couldn't sign " << F.getName() << " because " << e.what() << std::endl;
     }
 }
+
+void Bureaucrat::executeForm( AForm const& F) {
+    try {
+        F.execute( *this );
+        std::cout << name << " executed " << F.getName() << std::endl;
+    } catch ( std::exception &e) {
+        std::cout << name << " couldn't execute " << F.getName() << " because " << e.what() << std::endl;
+    }
+}
+
 
 Bureaucrat::~Bureaucrat()
 {

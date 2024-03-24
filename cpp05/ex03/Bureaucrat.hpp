@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:51 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/12 23:15:56 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:57:19 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AForm;
 
 class Bureaucrat {
     private:
-        std::string name;
+        const std::string name;
         int grade;
         Bureaucrat();
     public:
@@ -46,7 +46,9 @@ class Bureaucrat {
                 virtual const char *what() const throw();
         };
 
-        void signAForm( AForm& F );
+        void signForm( AForm& F );
+        void executeForm( AForm const& F);
+
 };
 
 
