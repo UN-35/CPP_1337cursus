@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/24 21:34:49 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:35:14 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int main( void )
 {
 	try {
-		Bureaucrat bureau("UN35", 14);
+		Bureaucrat bureau("UN35", 0);
 
 		ShrubberyCreationForm sh("shrub");
 		RobotomyRequestForm rb("robot");
