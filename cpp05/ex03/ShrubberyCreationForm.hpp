@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:11:25 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/09 12:38:20 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/26 00:33:20 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include "AForm.hpp"
 #include <fstream>
-
 
 class ShrubberyCreationForm : public AForm {
     private:
@@ -26,8 +25,5 @@ class ShrubberyCreationForm : public AForm {
         ~ShrubberyCreationForm();
         void execute( Bureaucrat B ) const;
 };
-
-
-
 
 #endif

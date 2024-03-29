@@ -5,24 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/27 01:46:11 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/03/29 03:14:44 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/03/29 03:15:32 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include <iostream>
 
 int main() {
-    try {
-        Bureaucrat B("LORD", 1);
-        // B.decrement();
-        std::cout << "BUUReauCrat" << std::endl;
-        B.increment();
-        // B.increment();
-        std::cout << B << std::endl;
-    } catch ( std::exception &e ) {
-        std::cout << e.what() << std::endl;
-    }
-    return 0;
+    std::cout << "This is ex00" << std::endl;
 }
-

@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:07:48 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/15 21:12:39 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/27 02:23:47 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Bureaucrat::Bureaucrat( std::string const& name, int grade ): name(name), grade(grade) {
     if ( grade > 150 )
         throw GradeTooLowException();
-    else if ( grade < 0 )
+    else if ( grade < 1 )
         throw GradeTooHighException();
 }
 
@@ -56,13 +56,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
     return "GradeTooLowException";
 }
 
-
-
 std::ostream& operator<<( std::ostream& ostream, Bureaucrat const& op) {
     ostream << op.getName() << ", bureaucrat grade " << op.getGrade() << std::endl;
     return ostream;
 }
-
-
-
-

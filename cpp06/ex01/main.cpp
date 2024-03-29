@@ -5,24 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 11:07:54 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/27 01:46:11 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/03/29 00:00:48 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/03/29 01:25:40 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Serializer.hpp"
 
-int main() {
-    try {
-        Bureaucrat B("LORD", 1);
-        // B.decrement();
-        std::cout << "BUUReauCrat" << std::endl;
-        B.increment();
-        // B.increment();
-        std::cout << B << std::endl;
-    } catch ( std::exception &e ) {
-        std::cout << e.what() << std::endl;
-    }
-    return 0;
+int main(void)
+{
+	Data data;
+    data.name = "UN35";
+	uintptr_t serial = Serializer::serialize(&data);
+	std::cout << "Data serial number: " << serial << std::endl;
+ 
+	Data* obj = Serializer::deserialize(serial);
+	std::cout << "Object name: " << obj->name << std::endl;
+
+	return 0;
 }
-

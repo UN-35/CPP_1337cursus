@@ -6,13 +6,12 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 13:00:22 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/03/09 13:03:48 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/03/26 00:31:56 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
-
 
 #include "AForm.hpp"
 
@@ -25,9 +24,5 @@ class PresidentialPardonForm : public AForm {
         ~PresidentialPardonForm();
         void execute( Bureaucrat B ) const;
 };
-
-
-
-
 
 #endif
