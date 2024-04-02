@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/01 19:55:55 by yoelansa          #+#    #+#              #
-#    Updated: 2024/04/01 19:56:42 by yoelansa         ###   ########.fr        #
+#    Created: 2024/04/01 22:39:42 by yoelansa          #+#    #+#              #
+#    Updated: 2024/04/01 22:39:57 by yoelansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Easyfind
+NAME = Span
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 
 RM = rm -rf
 
