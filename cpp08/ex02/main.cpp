@@ -5,30 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 22:40:02 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/03 00:26:45 by yoelansa         ###   ########.fr       */
+/*   Created: 2024/04/03 00:27:46 by yoelansa          #+#    #+#             */
+/*   Updated: 2024/04/03 01:13:49 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "MutantStack.hpp"
+#include <list>
 
 int main() {
-    std::vector<int> v;
-    v.push_back(4);
-    v.push_back(3);
-    try{
-        Span s(10);
-        s.addNumber(1);
-        s.addNumber(34);
-        s.addNumber(12);
-        s.addNumber(322);
-
-        std::cout << s.longestSpan() << std::endl;
-        std::cout << s.shortestSpan() << std::endl;
-        s.addRange(v.begin(), v.end());
-        std::cout << s.longestSpan() << std::endl;
-        std::cout << s.shortestSpan() << std::endl;
-    } catch( std::exception &e ) {
-        std::cout << e.what() << std::endl;
+    MutantStack<int> mstack;
+    mstack.push(5);
+    mstack.push(17);
+    std::cout << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << mstack.size() << std::endl;
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    //[...]
+    mstack.push(0);
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+    ++it;
+    --it;
+    while (it != ite){
+        std::cout << *it << std::endl;
+        ++it;
     }
+    std::stack<int> s(mstack);
+    return 0;
 }

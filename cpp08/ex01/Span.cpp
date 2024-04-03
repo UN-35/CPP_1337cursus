@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:40:22 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/02 03:09:18 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/04/03 00:25:51 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,17 @@ Span::~Span() {}
 
 void Span::addNumber( int n ) {
     if ( this->vect.size() == this->N )
-        throw std::range_error( "Couldn't add a Number" );
+        throw std::range_error( "Couldn't add a Number!" );
     vect.push_back( n );
 }
 
 
-///////////////////// WTF is That??///////////////////////
-
-//need to use insert. vector::insert();
-void Span::addRange( std::vector<int> range ) {
-    for ( std::vector<int>::iterator iter = range.begin(); iter != range.end(); iter++ )
-        addNumber( *iter );
+void Span::addRange( std::vector<int>::iterator begin, std::vector<int>::iterator end ) {
+    std::vector<int> v( begin , end );
+    if (v.size() > N - vect.size())
+        throw std::range_error( "Couldn't add Range!" );
+    vect.insert( vect.end(), v.begin(), v.end() );
 }
-
-////////////////////////////////////
-
 
 
 unsigned int Span::getN() const {

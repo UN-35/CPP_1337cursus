@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:40:35 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/02 02:28:11 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:05:54 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Span
         std::vector<int> getVect() const;
 
         void addNumber( int n );
-        void addRange( std::vector<int> range );
+        void addRange( std::vector<int>::iterator begin, std::vector<int>::iterator end );
 
         unsigned int longestSpan();
         unsigned int shortestSpan();
