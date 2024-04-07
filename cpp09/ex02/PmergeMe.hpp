@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 13:16:26 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/07 13:18:38 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/04/07 18:09:56 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
+#include <deque>
 
 class PmergeMe {
     public:

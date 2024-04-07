@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 13:21:05 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/07 16:46:04 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/04/07 18:10:54 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ bool flag = false;
 unsigned int tmp;
 
 template <typename T, typename F, typename S>
-void algo( int ac, T cont, F fir, S sec ) {
+void algo( int ac, T cont, F fir, S sec, char type ) {
     struct timeval start, end;
     long second, micro;
     
@@ -46,7 +46,11 @@ void algo( int ac, T cont, F fir, S sec ) {
     second = end.tv_sec - start.tv_sec;
     micro = end.tv_usec - start.tv_usec;
     long diff = ( second / 1000000 ) + micro;
-    std::cout << "\nTime to process a range of " << ac << " elements with std::vector : " << diff  << " us" << "\n";
+    if ( type == 'V')
+        std::cout << "\nTime to process a range of " << ac << " elements with std::vector : " << diff  << " us" << "\n";
+    if ( type == 'D')
+        std::cout << "\nTime to process a range of " << ac << " elements with std::deque : " << diff  << " us" << "\n";
+    
 }
 
 
@@ -80,12 +84,20 @@ int main( int ac, char **av ) {
     for ( int i = 1; i < ac; i += 2 ) {
         if ( isdigit( *av[i] ) ) {
             parseInput( av[i], av[i + 1] );
-            vect.push_back( std::make_pair(std::atoi( av[i] ), std::atoi( av[i + 1] ) ) );
+            vect.push_back( std::make_pair( std::atoi( av[i] ), std::atoi( av[i + 1] ) ) );
         }
     }
     std::vector<unsigned int> vect1, vect2;
-    algo( ac, vect, vect1, vect2);
+    algo( ac, vect, vect1, vect2, 'V');
+
+    std::deque<std::pair<unsigned int, unsigned int> > lis;
+    for ( int i = 1; i < ac; i += 2) {
+        if ( isdigit( *av[i] ) ) {
+            parseInput( av[i], av[i + 1] );
+            lis.push_back( std::make_pair( std::atoi( av[i] ), std::atoi( av[i + 1] ) ) );
+        }
+    }
+    std::deque<unsigned int> lis1, lis2;
+    algo( ac, lis, lis1, lis2, 'D' );
 }
-
-
 
