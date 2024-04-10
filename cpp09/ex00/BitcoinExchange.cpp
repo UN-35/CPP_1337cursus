@@ -6,14 +6,11 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:21:59 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/07 00:38:54 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:53:22 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-
-
-
 
 // .............. Date struct ..............
 bool date::operator<(const  date& obj) const {
@@ -45,9 +42,7 @@ BitcoinExchange::BitcoinExchange(void) {
 	_datafile.close();
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange& obj) {
-	*this = obj;
-}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& obj) {this->operator=(obj);}
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj) {
 	if (this != &obj) {
@@ -56,12 +51,9 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj) {
 	return *this;
 }
 
-BitcoinExchange::~BitcoinExchange(void) {
-}
+BitcoinExchange::~BitcoinExchange(void) {}
 
-std::map<date, float> BitcoinExchange::getData(void) const {
-	return this->data;
-}
+std::map<date, float> BitcoinExchange::getData(void) const {return this->data;}
 
 void BitcoinExchange::exec(std::string input) {
 	std::ifstream _infile;
@@ -101,7 +93,7 @@ float BitcoinExchange::get_value(date _date, std::string _amount) {
 	return (it)->second * amount;
 }
 
-// .............. Functions ..............
+// ..............Utile Functions ..............
 
 date pairing(std::string line) {
 	date _date;
@@ -187,7 +179,7 @@ bool checkLine(std::string line) {
 	}
 	n = strToType(line.substr(13), n);
 	if (n < 0) {
-		std::cerr << "Error: not a possitive number." << std::endl;
+		std::cerr << "Error: not a positive number." << std::endl;
 		return false;
 	} else if (n > 1000) {
 		std::cerr << "Error: too large a number." << std::endl; 

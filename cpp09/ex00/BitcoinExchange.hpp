@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:22:11 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/06 23:55:15 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:50:02 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ T strToType( std::string const& str, T type ) {
     return number;
 }
 
-
-
 class BitcoinExchange {
     private:
         std::map<date, float> data;
@@ -58,13 +56,11 @@ class BitcoinExchange {
 
         float get_value(date date, std::string amount);
         void exec( std::string infile );
-
 };
 
 bool checkInFile( std::string input );
 date pairing( std::string line );
 float getPairValue( std::string line );
-// bool isInt( std::string str );
 bool isFloat( std::string str );
 bool checkLine( std::string line );
 

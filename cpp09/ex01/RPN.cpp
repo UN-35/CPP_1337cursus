@@ -6,16 +6,14 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 00:45:56 by yoelansa          #+#    #+#             */
-/*   Updated: 2024/04/07 01:11:30 by yoelansa         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:52:51 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
 RPN::RPN( void ) {}
-RPN::RPN( RPN const& obj ) {
-    *this = obj;
-}
+RPN::RPN( RPN const& obj ) {this->operator=(obj);}
 RPN& RPN::operator=( RPN const& obj ) {
     if ( this != &obj )
         this->contain = obj.contain;
