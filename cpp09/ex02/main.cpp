@@ -6,11 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 13:21:05 by yoelansa          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/04/10 19:22:12 by yoelansa         ###   ########.fr       */
-=======
-/*   Updated: 2024/04/07 18:10:54 by yoelansa         ###   ########.fr       */
->>>>>>> refs/remotes/origin/main
+/*   Updated: 2024/04/10 19:30:37 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +86,6 @@ int main( int ac, char **av ) {
     std::vector<std::pair<unsigned int, unsigned int> > vect;
     for ( int i = 1; i < ac; i += 2 ) {
         if ( isdigit( *av[i] ) ) {
-<<<<<<< HEAD
             if ( k == true ) {
                 std::cout << "Before: ";
                 if ( ac < 6 ) {
@@ -104,16 +99,11 @@ int main( int ac, char **av ) {
                 k = false;
             }
             vect.push_back( std::make_pair(std::atoi( av[i] ), std::atoi( av[i + 1] ) ) );
-=======
-            parseInput( av[i], av[i + 1] );
-            vect.push_back( std::make_pair( std::atoi( av[i] ), std::atoi( av[i + 1] ) ) );
->>>>>>> refs/remotes/origin/main
         }
     }
     if (ac == 1)
         std::cout << "Before: " << av[1];
     std::vector<unsigned int> vect1, vect2;
-<<<<<<< HEAD
     algo( ac, vect, vect1, vect2, 'V' );
 
     std::deque<std::pair<unsigned int, unsigned int> > deq;
@@ -123,18 +113,6 @@ int main( int ac, char **av ) {
     }
     std::deque<unsigned int> deq1, deq2;
     algo( ac, deq, deq1, deq2, 'D' );
-=======
-    algo( ac, vect, vect1, vect2, 'V');
 
-    std::deque<std::pair<unsigned int, unsigned int> > lis;
-    for ( int i = 1; i < ac; i += 2) {
-        if ( isdigit( *av[i] ) ) {
-            parseInput( av[i], av[i + 1] );
-            lis.push_back( std::make_pair( std::atoi( av[i] ), std::atoi( av[i + 1] ) ) );
-        }
-    }
-    std::deque<unsigned int> lis1, lis2;
-    algo( ac, lis, lis1, lis2, 'D' );
->>>>>>> refs/remotes/origin/main
 }
 
